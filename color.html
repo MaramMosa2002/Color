@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style>
+		body{
+			background-color: rgb(179, 110, 133);
+		}
+    	td {
+        	width: 50px;
+        	height: 50px;
+        	border: 1px solid rgb(5, 5, 5);
+			background-color: rgb(247, 246, 245);
+    	}
+	</style>
+	<script>
+    	var defaultColor = 'white'; 
+
+    	function selectColor(color) {
+        	defaultColor = color;
+    	}
+
+    	function changeColor(index) {
+        	var divs = document.getElementsByClassName('box');
+        	divs[index].style.backgroundColor = defaultColor;
+    	}
+
+    	function resetColors() {
+        	defaultColor='white';
+        	var divs = document.getElementsByClassName('box');
+        	for (var i = 0; i < divs.length; i++) {
+            	divs[i].style.backgroundColor = defaultColor;
+        	}
+    	}
+	</script>
+</head>
+<body>
+	<table>
+    	<tr>
+        	<td class="box" onclick="changeColor(0)"></td>
+        	<td class="box" onclick="changeColor(1)"></td>
+        	<td class="box" onclick="changeColor(2)"></td>
+    	</tr>
+    	<tr>
+        	<td class="box" onclick="changeColor(3)"></td>
+        	<td class="box" onclick="changeColor(4)"></td>
+        	<td class="box" onclick="changeColor(5)"></td>
+    	</tr>
+    	<tr>
+        	<td class="box" onclick="changeColor(6)"></td>
+        	<td class="box" onclick="changeColor(7)"></td>
+        	<td class="box" onclick="changeColor(8)"></td>
+    	</tr>
+	</table>
+	<br>
+	<button onclick="selectColor('red')" style="background-color: rgb(252, 7, 7);">Red</button>
+	<button onclick="selectColor('blue')" style="background-color: rgb(11, 105, 245);">Blue</button>
+	<button onclick="selectColor('green')" style="background-color: rgb(11, 145, 11);">Green</button>
+	<button onclick="selectColor('yellow')" style="background-color: rgb(173, 190, 11);">Yellow</button>
+	<button onclick="selectColor('black')" style="background-color: rgb(32, 29, 29);">Black</button>
+	<button onclick="selectColor('rgb(238, 119, 9)')" style="background-color: rgb(236, 118, 6);">Orange</button>
+	<button onclick="selectColor('rgb(105, 4, 88)')" style="background-color: rgb(222, 15, 230);">Purple</button>
+	<br>
+	<br>
+	<br>
+	<button onclick="resetColors()" style="background-color: rgb(247, 246, 245);">Reset</button>
+</body>
+</html>
